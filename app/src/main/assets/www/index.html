@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <title> Prospection Manager </title>
+    <script type="text/javascript" charset="utf-8" src="lib/jquery.js"></script>
+  <style type="text/css">
+  </style>
+ </head>
+ <body>    
+ 	<!-- -->
+ 	Oups, quelque chose s'est mal passé ...
+
+ 	<!-- Navigation entre les pages :  -->
+
+
+ 	<!-- Script de l'index : -->
+    <script type="text/html" id="itemListeProspection">
+       <li class='itemProspection'>
+         <a class='lienProspection' href='#prospection/{ID}'>
+         {NOM}
+        </a>
+      </li>
+   </script>
+
+    <script type="text/html" id="page-index">
+      <h1 class="ProspectionManager"> Liste de prospection</h1>
+    <ul class="listeProspection" id="listeProspection"></ul>
+    <a href="#ajouterProspection" > Ajouter prospection </a>
+  </script>
+	
+
+	<!-- Script de l'index : -->
+ 	<script type="text/html" id="page-details">
+ 		 <h1 id="prospectionNom"> {NOM} </h1>
+      <p id="prospectionDescription"> {DESCRIPTION} </p>
+ 	</script>
+	
+
+	<!-- Script de l'index : -->
+ 	<script type="text/html" id="page-ajout">
+ 		<form>
+      <label for="prospectionNom">Nom :</label>      <input type="text" id="prospectionNom" />
+      
+      <label for="prospectionDescription"> Description : </label>      <textarea type="text" id="prospectionDescription"></textarea>
+
+    <input type="submit" value="Ajouter" />
+
+  </form>
+      <a href="#">Retour a la liste sans ajouter</a>
+
+ 	</script>
+
+  <script src="ManagerDAO/ProspectionManagerDAO.js"></script>
+  <script src="Vues/IndexVue.js"></script>
+  <script src="Vues/ProspectionVue.js"></script>
+  <script src="ControleurProspectionManager.js"></script>
+
+ </body>
+</html>
