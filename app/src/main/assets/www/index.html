@@ -1,108 +1,132 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Liste des Prospection</title>
-<style type="text/css">
-  .titreApplication
-  {
-    color:white;
-    background-color:grey;
-    text-align:center;
-  }
-  
-  .listeProspectionx
-  {
-    padding:0;
-    text-align:center;
-    list-style-type:none;
-  }
-  
-  .itemProspection
-  {
-    padding:0.5rem;
-    margin-bottom:0.3rem;
-    background-color:black;
-  }
+  <!--
+  <script type="text/javascript" charset="utf-8" src="lib/cordova.js"></script>
+  -->
+  <script type="text/javascript" charset="utf-8" src="lib/jquery.js"></script>
 
-  .itemProspection:hover
-  {
-    background-color:pink;
-  }
-  
-  .lienProspection
-  {
-    color:white;
-    text-decoration:none;
-  }
-  
-  
-  
-</style>
-<script type="text/javascript" charset="utf-8" src="lib/jquery.js"></script> 
+  <title>Liste des Prospection</title>
+
+  <link rel="stylesheet" type="text/css" href="css/prospection.css">
+  <link rel="stylesheet" type="text/css" href="css/topbar.css">
+  <link rel="stylesheet" type="text/css" href="css/ajouterProspectionVue.css">
+  <link rel="stylesheet" type="text/css" href="css/modifierProspectionVue.css">
+  <link rel="stylesheet" type="text/css" href="css/prospectionVue.css">
 </head>
 <body>
+
   Il y a une erreur dans le programme
   
-  <script type="text/html" id="page-liste-Prospection"> 	
+  <script type="text/html" id="page-liste-Prospection"> 
+
+  <ul class="topnav" id="myTopnav">
+    <li><a class="active" href="#">Accueil</a></li>
+    <li><a href="#ajouter-Prospection/"> Ajouter une prospection</a></li>
+    <li class="icon">
+      <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
+    </li>
+  </ul>
     <h1 class="titreApplication">Liste de prospection</h1>
-    <ul class="listeProspectionx" id="liste-Prospection"></ul>
-    <a href="#ajouter-Prospection/{ID}">Ajouter un Prospection</a>
+    <hr>
+    <ul class="listeProspection" id="liste-Prospection"></ul>
+    <button class="add"onclick="window.location.href='#ajouter-Prospection/'"> + </button>
+
   </script>
 
-  <!-- TODO: faire item-liste-Prospectionx -->
-  <script type="text/html" id="item-liste-Prospection"> 
+  <script type="text/html" id="item-liste-Prospection">
     <li class='itemProspection'>
-      <a class='lienProspection' href='#Prospection/{ID}'>
-      {NOM}
-      </a>
+
+    <button class="item"onclick="window.location.href='#Prospection/{ID}'"> {NOM}</button>
+      
     </li>
   </script>
   
-  <script type="text/html" id="page-Prospection"> 	
-    <h1 id="Prospection-nom">{NOM}</h1>
-    <p id="Prospection-description">{DESCRIPTION}</p>
-    <!-- href modifier -->
-    <a href="#">Retour à la liste</a>
-    <a href="#modifier-Prospection/{ID}">Modifier une Prospection</a>
+  <script type="text/html" id="page-Prospection"> 
+
+  <ul class="topnav" id="myTopnav">
+    <li><a class="active" href="#">Accueil</a></li>
+    <li><a href="#ajouter-Prospection/"> Ajouter une prospection</a></li>
+    <li class="icon">
+      <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
+    </li>
+  </ul>
+
+    <h1 class="titreDetails">Details de la prospection</h1>
+    <hr />
+    <div class="conteuneur">
+      <h3 id="Prospection-nom">{NOM}</h3>
+      <h4 id="Prospection-description">{DESCRIPTION}</h4>
+      <button class="retour" onclick="window.location.href='#'"> &#x21A9 </button>
+
+
+      <button class="btnModifier" onclick="alert(0);window.location.href='#modifier-Prospection/{ID}'"> Modifier une Prospection </button>
+
+      <button class="add" onclick="window.location.href='#ajouter-Prospection/'"> + </button>
+
+
+    </div>
+
+    
   </script>
 
   <script type="text/html" id="page-ajouter-Prospection"> 	
-    <form id = "formulaire-ajouter">
-      <label for="Prospection-nom">Nom</label>
+
+  <ul class="topnav" id="myTopnav">
+    <li><a class="active" href="#"> Accueil</a></li>
+    <li class="icon">
+      <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
+    </li>
+  </ul>
+
+    <h1 class="titreAjouter">Ajouter une prospection</h1>
+    <hr />
+    <form id = "formulaire-ajouter" class="formAjout">
+      <label for="Prospection-nom">Nom :</label>
       <input type="text" id="Prospection-nom"/>
-      
-      
-      <label for="Prospection-description">Description</label>
-      <textarea id="Prospection-description"></textarea>
+            
+      <label for="Prospection-description">Description :</label>
+      <textarea  id="Prospection-description"></textarea>
       
       <input type="submit" value="Ajouter"/>
     </form>
-    <a href="#">Retour à la liste sans ajouter</a>
+        <button class="retour" onclick="window.location.href='#'"> &#x21A9 </button>
+
   </script>
 
-  <script type="text/html" id="page-modifier-Prospection">   
-    <form id = "formulaire-modifier">
+  <script type="text/html" id="page-modifier-Prospection"> 
+  <ul class="topnav" id="myTopnav">
+    <li><a class="active" href="#"> Accueil</a></li>
+    <li><a href="#ajouter-Prospection">Ajouter une prospection</a></li>
+    <li class="icon">
+      <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
+    </li>
+  </ul>
+  <h1 class="titreModifier">Modifier la prospection</h1>
+  <hr />
+  <form id = "formulaire-modifier" class="formModifier">
 
-      <label for="Prospection-nom">NOM</label>
-      <input type="text" id="Prospection-nom" value="{NOM}" />
+    <label for="Prospection-nom">Nom : </label>
+    <input type="text" id="Prospection-nom" value="{NOM}" />
 
-      
-      <label for="Prospection-description">DESCRIPTION</label>
-      <input id="Prospection-description" value="{DESCRIPTION}"/>
-      
-      <input type="submit" value="modifier"/>
-    </form>
-    <a href="#">Retour à la liste sans modifier</a>
+
+    <label for="Prospection-description">Description :</label>
+    <textarea id="Prospection-description"> {DESCRIPTION} </textarea>
+
+    <input type="submit" value="Modifier"/>
+  </form>
+  <button class="retour"onclick="window.location.href='#'"> &#x21A9 </button>
   </script>
 
   
+  <script src="controleur/toolbar.js"></script> 
   <script src="modele/Prospection.js"></script> 
   <script src="donnees/ProspectionDAO.js"></script> 
-    <script src="vue/modifierProspectionVue.js"></script>
+  <script src="vue/ModifierProspectionVue.js"></script>
   <script src="vue/ajouterProspectionVue.js"></script>
   <script src="vue/ProspectionVue.js"></script>
   <script src="vue/ListeProspectionxVue.js"></script>
-  <script src="application.js"></script>
+  <script src="controleur/application.js"></script>
 </body>
 </html>
 

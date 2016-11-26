@@ -1,0 +1,126 @@
+*{
+	font-family:'Open Sans',Arial,sans-serif;
+}
+
+.titreApplication{
+    color:#333;
+    text-align:center;
+}
+
+.add{
+    position: fixed;
+    right:    0;
+    bottom:   0;
+    margin: 2rem;
+    border-radius: 50%;
+    border: 1px solid white;
+    width: 3rem;
+    height: 3rem;
+    font-size: 2rem;
+    background-color: #333;
+    color: white;
+}
+.add:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background-color: #4CAF50;
+    color: #333;
+    height: 4rem;
+    width: 4rem;
+}
+
+.listeProspection{
+
+    padding:0;
+    text-align:center;
+    list-style-type:none;
+    width: 25;
+    margin: 1rem auto;
+}
+
+.item
+{
+    width: 90%;
+    border: none;
+    color : white;
+    padding:1rem;
+    margin: 1rem;
+    margin-bottom:0.3rem;
+    background-color:#333;
+    font-size: 1.5rem;
+    border-radius: 4px;
+
+
+}
+
+.item:hover
+{
+    font-weight: bold;
+    color : grey;
+    background-color:pink;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+}
+
+@media (min-width: 680px) {
+
+	.add{
+		position: fixed;
+		right:    0;
+		bottom:   0;
+		margin: 2rem;
+		border-radius: 50%;
+	 	border: 1px solid white;
+	 	width: 3.5rem;
+	 	height: 3.5rem;
+		font-size: 3rem;
+		background-color: #333;
+		color: white;
+	}
+	.add:hover{
+	 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+		background-color: #4CAF50;
+	    color: #333;
+	    height: 4rem;
+		width: 4rem;
+	}
+	hr{
+		width: 70rem;
+		border: 0;
+	    height: 1px;
+	    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	}
+	.listeProspection
+	{
+		padding:0;
+		text-align:center;
+		list-style-type:none;
+		width: 70rem;
+		margin: 1rem auto;
+	}
+
+
+	.item
+	{
+		width: 100%;
+		border: none;
+		color : white;
+		padding:1rem;
+		margin: 1rem;
+		margin-bottom:0.3rem;
+		background-color:#333;
+		font-size: 1.5rem;
+		border-radius: 4px;
+
+
+	}
+
+	.item:hover
+	{
+		font-weight: bold;
+		color : grey;
+		background-color:pink;
+		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+	}
+
+}

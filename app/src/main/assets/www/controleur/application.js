@@ -23,7 +23,6 @@ var applicationProspectionManager = {
     }
     else if(ancre.match(/^#modifier-Prospection\/([0-9]+)/)) 
     {
-      alert("modifier");
       var trouvailles = ancre.match(/^#modifier-Prospection\/([0-9]+)/);
       var id_Prospection = trouvailles[1];
       var Prospection = this.ProspectionDAO.trouverProspectionParId(id_Prospection);
@@ -32,7 +31,6 @@ var applicationProspectionManager = {
     }
     else
     {
-      alert("else");
       var trouvailles = ancre.match(/^#Prospection\/([0-9]+)/);
       var id_Prospection = trouvailles[1];
       var Prospection = this.ProspectionDAO.trouverProspectionParId(id_Prospection);

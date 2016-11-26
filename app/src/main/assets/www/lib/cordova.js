@@ -6913,7 +6913,7 @@ require('cordova/channel').onNativeReady.fire();
 
 
     // Try to XHR the cordova_plugins.json file asynchronously.
-    var xhr = new XMLHttpRequest();
+    /*var xhr = new XMLHttpRequest();
     xhr.onload = function() {
         // If the response is a JSON string which composes an array, call handlePluginsObject.
         // If the request fails, or the response is not a JSON array, just call finishPluginLoading.
@@ -6930,7 +6930,7 @@ require('cordova/channel').onNativeReady.fire();
         }
     };
     xhr.onerror = function() {
-        // In this case, the json file was not present, but XHR was allowed, 
+        // In this case, the json file was not present, but XHR was allowed,
         // so we should still try the script injection technique with the js file
         // in case that is there.
         injectPluginScript();
@@ -6940,7 +6940,8 @@ require('cordova/channel').onNativeReady.fire();
         xhr.send();
     } catch(err){
         injectPluginScript();
-    }
+    }*/
+    finishPluginLoading();
 }(window));
 
 
