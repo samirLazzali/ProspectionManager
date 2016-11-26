@@ -1,59 +1,117 @@
 <!DOCTYPE HTML>
 <html>
- <head>
-  <title> Prospection Manager </title>
-    <script type="text/javascript" charset="utf-8" src="lib/jquery.js"></script>
-  <style type="text/css">
-  </style>
- </head>
- <body>    
- 	<!-- -->
- 	Oups, quelque chose s'est mal passé ...
+<head>
+<title>Liste des Prospection</title>
+<style type="text/css">
+  .titreApplication
+  {
+    color:white;
+    background-color:grey;
+    text-align:center;
+  }
+  
+  .listeProspectionx
+  {
+    padding:0;
+    text-align:center;
+    list-style-type:none;
+  }
+  
+  .itemProspection
+  {
+    padding:0.5rem;
+    margin-bottom:0.3rem;
+    background-color:black;
+  }
 
- 	<!-- Navigation entre les pages :  -->
-
-
- 	<!-- Script de l'index : -->
-    <script type="text/html" id="itemListeProspection">
-       <li class='itemProspection'>
-         <a class='lienProspection' href='#prospection/{ID}'>
-         {NOM}
-        </a>
-      </li>
-   </script>
-
-    <script type="text/html" id="page-index">
-      <h1 class="ProspectionManager"> Liste de prospection</h1>
-    <ul class="listeProspection" id="listeProspection"></ul>
-    <a href="#ajouterProspection" > Ajouter prospection </a>
+  .itemProspection:hover
+  {
+    background-color:pink;
+  }
+  
+  .lienProspection
+  {
+    color:white;
+    text-decoration:none;
+  }
+  
+  
+  
+</style>
+<script type="text/javascript" charset="utf-8" src="lib/jquery.js"></script> 
+</head>
+<body>
+  Il y a une erreur dans le programme
+  
+  <script type="text/html" id="page-liste-Prospection"> 	
+    <h1 class="titreApplication">Liste de prospection</h1>
+    <ul class="listeProspectionx" id="liste-Prospection"></ul>
+    <a href="#ajouter-Prospection/{ID}">Ajouter un Prospection</a>
   </script>
-	
 
-	<!-- Script de l'index : -->
- 	<script type="text/html" id="page-details">
- 		 <h1 id="prospectionNom"> {NOM} </h1>
-      <p id="prospectionDescription"> {DESCRIPTION} </p>
- 	</script>
-	
+  <!-- TODO: faire item-liste-Prospectionx -->
+  <script type="text/html" id="item-liste-Prospection"> 
+    <li class='itemProspection'>
+      <a class='lienProspection' href='#Prospection/{ID}'>
+      {NOM}
+      </a>
+    </li>
+  </script>
+  
+  <script type="text/html" id="page-Prospection"> 	
+    <h1 id="Prospection-nom">{NOM}</h1>
+    <p id="Prospection-description">{DESCRIPTION}</p>
+    <!-- href modifier -->
+    <a href="#">Retour à la liste</a>
+    <a href="#modifier-Prospection/{ID}">Modifier une Prospection</a>
+  </script>
 
-	<!-- Script de l'index : -->
- 	<script type="text/html" id="page-ajout">
- 		<form>
-      <label for="prospectionNom">Nom :</label>      <input type="text" id="prospectionNom" />
+  <script type="text/html" id="page-ajouter-Prospection"> 	
+    <form id = "formulaire-ajouter">
+      <label for="Prospection-nom">Nom</label>
+      <input type="text" id="Prospection-nom"/>
       
-      <label for="prospectionDescription"> Description : </label>      <textarea type="text" id="prospectionDescription"></textarea>
+      
+      <label for="Prospection-description">Description</label>
+      <textarea id="Prospection-description"></textarea>
+      
+      <input type="submit" value="Ajouter"/>
+    </form>
+    <a href="#">Retour à la liste sans ajouter</a>
+  </script>
 
-    <input type="submit" value="Ajouter" />
+  <script type="text/html" id="page-modifier-Prospection">   
+    <form id = "formulaire-modifier">
 
-  </form>
-      <a href="#">Retour a la liste sans ajouter</a>
+      <label for="Prospection-nom">NOM</label>
+      <input type="text" id="Prospection-nom" value="{NOM}" />
 
- 	</script>
+      
+      <label for="Prospection-description">DESCRIPTION</label>
+      <input id="Prospection-description" value="{DESCRIPTION}"/>
+      
+      <input type="submit" value="modifier"/>
+    </form>
+    <a href="#">Retour à la liste sans modifier</a>
+  </script>
 
-  <script src="ManagerDAO/ProspectionManagerDAO.js"></script>
-  <script src="Vues/IndexVue.js"></script>
-  <script src="Vues/ProspectionVue.js"></script>
-  <script src="ControleurProspectionManager.js"></script>
-
- </body>
+  
+  <script src="modele/Prospection.js"></script> 
+  <script src="donnees/ProspectionDAO.js"></script> 
+    <script src="vue/modifierProspectionVue.js"></script>
+  <script src="vue/ajouterProspectionVue.js"></script>
+  <script src="vue/ProspectionVue.js"></script>
+  <script src="vue/ListeProspectionxVue.js"></script>
+  <script src="application.js"></script>
+</body>
 </html>
+
+
+
+
+
+
+
+
+
+
